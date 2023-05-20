@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarjeta de Banco</title>
+</head>
+
+<body>
+  <h1>Tarjeta de Banco</h1>
+
+  <script>
+    // BCP 455786 && Interbank 421355 && BBVA 455103
+    // alert imprime en pantalla un mensaje
+    alert('Bienvenidos al Banco Estofador');
+
+    // let crea una variable y promt se usa para obtener variables
+    let cardNumber = prompt('Por favor digite sus primeros seis dígitos de la tarjeta');
+    let validationCard = false;
+
+    // switch evalua los casos es mejor que usar los if
+    // cada case debe de ser igual al valor que ingresa en cardNumber
+    switch (cardNumber) {
+      case '455786':
+        alert('Usted es BCP');
+        alert('Muchas gracias por ser parte de BCP');
+        validationCard = true;
+        break;
+      case '421355':
+        alert('Usted es Interbank');
+        alert('Muchas gracias por ser parte de Interbanck');
+        validationCard = true;
+        break;
+      case '455103':
+        alert('Usted es BBVA');
+        alert('Muchas gracias por ser parte de BBVA');
+        validationCard = true;
+        break;
+      default:
+        alert('Nosotros no trabajamos con su banco');
+        break;
+    }
+    
+    if (validationCard) {
+      // let bd = {
+      //   database1: '455786455786',
+      //   database1: '421355421355',
+      //   database1: '455103455103',
+      // }
+
+      let digital = {
+        database1: {
+          cardNumber: 455786455786,
+          money: 12345
+        },
+        database2: {
+          cardNumber: 421355421355,
+          money: 12345
+        },
+        database3: {
+          cardNumber: 455103455103,
+          money: 12345
+        }
+      }
+
+      cardNumber = prompt('Ingrese su número de tarjeta completa');
+      if(digital.database1.cardNumber == cardNumber) {
+        alert('Gracias 1');
+      }else if(digital.database2.cardNumber == cardNumber) {
+        alert('Gracias 2');
+      } else if(digital.database3.cardNumber == cardNumber) {
+        alert('Gracias 3');
+      } else {
+        alert('No coincide con nuestra base de datos');
+      }
+    } else {
+      alert('No cambió nada');
+    }
+  </script>
+</body>
+</html>
